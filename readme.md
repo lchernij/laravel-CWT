@@ -9,8 +9,17 @@ This project is a study case about a website and API to track workers in work si
 - Laravel 13
 - PHP 8.3
 - PostgreSQL
+- PostGIS
 - TailwindCSS
 - Livewire
+
+## Some considerations of personal development
+
+- Use `softDeletes` in the models to allow restoring deleted records if needed.
+- Use `Fillable` attributes in the models to allow mass assignment of the fields to speed up development.
+- Use `HasFactory` in the models to allow creating factories for testing and seeding the database.
+- Use geopraphic coordinates in the working sites to allow tracking the workers in the site.
+- In CompanyWorkingSite table I use [GIST](https://www.postgresql.org/docs/current/gist.html#GIST-EXAMPLES) as the index type for the location field to allow spatial queries in the database.
 
 ## Documentation
 
