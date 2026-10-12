@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('company_working_sites', function (Blueprint $table) {
             $table->id();
 
-            # Foreign key constraint to the companies table
+            // Foreign key constraint to the companies table
             $table->foreignId('company_id')->constrained()->cascadeOnDelete();
 
-            # General information about the working site
+            // General information about the working site
             $table->string('name')->unique();
             $table->string('address');
             $table->string('city');
@@ -25,14 +25,14 @@ return new class extends Migration
             $table->string('zip_code');
             $table->string('country');
 
-            # The location column is a geography type with SRID 4326
+            // The location column is a geography type with SRID 4326
             $table->geography('location', 'POINT', 4326);
 
-            # Timestamps and soft deletes
+            // Timestamps and soft deletes
             $table->timestamps();
             $table->softDeletes();
 
-            # Indexes for faster queries
+            // Indexes for faster queries
             $table->index('location', 'company_working_sites_location_index', 'GIST');
             $table->index('city');
             $table->index('state');

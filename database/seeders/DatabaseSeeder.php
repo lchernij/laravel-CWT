@@ -64,30 +64,30 @@ class DatabaseSeeder extends Seeder
         User::factory(1000)->create([
             'type' => UserType::ADMIN,
         ]);
-        echo "Bulk admin users created in: " . (microtime(true) - $start) . " seconds\n";
+        echo 'Bulk admin users created in: '.(microtime(true) - $start)." seconds\n";
 
         $start = microtime(true);
         User::factory(1000)->create([
             'type' => UserType::WORKER,
         ]);
-        echo "Bulk worker users created in: " . (microtime(true) - $start) . " seconds\n";
+        echo 'Bulk worker users created in: '.(microtime(true) - $start)." seconds\n";
 
         $start = microtime(true);
         User::factory(1000)->create([
             'type' => UserType::COMPANY,
         ]);
-        echo "Bulk company users created in: " . (microtime(true) - $start) . " seconds\n";
+        echo 'Bulk company users created in: '.(microtime(true) - $start)." seconds\n";
 
         $start = microtime(true);
         Company::factory(100)->create();
-        echo "Bulk companies created in: " . (microtime(true) - $start) . " seconds\n";
-        
+        echo 'Bulk companies created in: '.(microtime(true) - $start)." seconds\n";
+
         $start = microtime(true);
         CompanyWorker::factory(1000)->create();
-        echo "Bulk company workers created in: " . (microtime(true) - $start) . " seconds\n";
-        
+        echo 'Bulk company workers created in: '.(microtime(true) - $start)." seconds\n";
+
         $start = microtime(true);
         CompanyWorkingSite::factory(1000)->create();
-        echo "Bulk company working sites created in: " . (microtime(true) - $start) . " seconds\n";
+        echo 'Bulk company working sites created in: '.(microtime(true) - $start)." seconds\n";
     }
 }

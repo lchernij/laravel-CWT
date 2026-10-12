@@ -25,7 +25,7 @@ class CompanyWorkingSiteFactory extends Factory
             'state' => $this->faker->state(),
             'zip_code' => $this->faker->postcode(),
             'country' => $this->faker->country(),
-            
+
             // PostGIS expects WKT with longitude first and latitude second.
             'location' => sprintf(
                 'SRID=4326;POINT(%F %F)',
