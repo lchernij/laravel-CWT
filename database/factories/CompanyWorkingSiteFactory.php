@@ -18,14 +18,20 @@ class CompanyWorkingSiteFactory extends Factory
     public function definition(): array
     {
         return [
-            'company_id' => \App\Models\Company::factory(),
-            'name' => $this->faker->company(),
+            'company_id' => rand(1, 10),
+            'name' => $this->faker->unique()->company(),
             'address' => $this->faker->streetAddress(),
             'city' => $this->faker->city(),
             'state' => $this->faker->state(),
             'zip_code' => $this->faker->postcode(),
             'country' => $this->faker->country(),
-            'location' => $this->faker->latitude() . ',' . $this->faker->longitude(),
+            
+            // PostGIS expects WKT with longitude first and latitude second.
+            'location' => sprintf(
+                'SRID=4326;POINT(%F %F)',
+                $this->faker->longitude(),
+                $this->faker->latitude(),
+            ),
         ];
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Enum\UserType;
 use App\Models\CompanyWorker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,10 +18,8 @@ class CompanyWorkerFactory extends Factory
     public function definition(): array
     {
         return [
-            'company_id' => \App\Models\Company::factory(),
-            'user_id' => \App\Models\User::factory([
-                'type' => UserType::WORKER,
-            ]),
+            'company_id' => rand(1, 10), // Assuming company IDs 1 to 10 exist
+            'user_id' => rand(2, 3), // Assuming user IDs 2 and 3 are workers
         ];
     }
 }
