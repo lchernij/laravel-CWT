@@ -7,6 +7,7 @@ use App\Models\Company;
 use App\Models\CompanyWorker;
 use App\Models\CompanyWorkingSite;
 use App\Models\User;
+use App\Models\WorkerAttendanceWorkingSite;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -89,5 +90,9 @@ class DatabaseSeeder extends Seeder
         $start = microtime(true);
         CompanyWorkingSite::factory(1000)->create();
         echo 'Bulk company working sites created in: '.(microtime(true) - $start)." seconds\n";
+
+        $start = microtime(true);
+        WorkerAttendanceWorkingSite::factory(10000)->create();
+        echo 'Bulk worker attendance working sites created in: '.(microtime(true) - $start)." seconds\n";
     }
 }

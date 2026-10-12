@@ -23,7 +23,7 @@ class CompanyWorkingSiteFactory extends Factory
             'address' => $this->faker->streetAddress(),
             'city' => $this->faker->city(),
 
-            // @phpstan-ignore-next-line method.notFound # This method isn't declared in the PHPDoc in Faker\Generator, but it exists 
+            // @phpstan-ignore-next-line method.notFound # This method isn't declared in the PHPDoc in Faker\Generator, but it exists
             'state' => $this->faker->state(),
 
             'zip_code' => $this->faker->postcode(),
