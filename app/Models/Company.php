@@ -11,4 +11,9 @@ class Company extends Model
 {
     /** @use HasFactory<\Database\Factories\CompanyFactory> */
     use HasFactory;
+
+    public function workingSites()
+    {
+        return $this->hasMany(CompanyWorkingSite::class);
+    }
 }
