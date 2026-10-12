@@ -14,17 +14,13 @@ return new class extends Migration
         Schema::create('company_workers', function (Blueprint $table) {
             $table->id();
 
-            # Foreign key columns
-            $table->unsignedBigInteger('company_id');
-            $table->unsignedBigInteger('user_id');
-            
-            # Timestamps and soft deletes
-            $table->timestamps();
-            $table->softDeletes();
-
             # Foreign key constraints
             $table->foreignId('company_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+
+            # Timestamps and soft deletes
+            $table->timestamps();
+            $table->softDeletes();
 
             # Indexes for faster queries
             $table->index('company_id');
