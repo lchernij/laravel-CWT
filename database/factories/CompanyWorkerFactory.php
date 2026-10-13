@@ -18,8 +18,8 @@ class CompanyWorkerFactory extends Factory
     public function definition(): array
     {
         return [
-            'company_id' => rand(1, 10), // Assuming company IDs 1 to 10 exist
-            'user_id' => rand(2, 3), // Assuming user IDs 2 and 3 are workers
+            'company_id' => rand(1, 100), // Assuming company IDs 1 to 10 exist
+            'user_id' => rand(6, 1005), // Assuming user IDs 6 to 1005 are workers
         ];
     }
 }
