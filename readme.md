@@ -19,6 +19,9 @@ This project is a study case about a website and API to track workers in work si
 
 ## Some considerations of personal development
 
+- Use GitHub Actions to run tests and code quality checks on every push to the repository.
+  - There is no tests yet, but I will add them in the future.
+- I plan to make some UI with TailwindCSS and Livewire. I started to learn them recently. 
 - Use `softDeletes` in the models to allow restoring deleted records if needed.
 - Use `Fillable` attributes in the models to allow mass assignment of the fields to speed up development.
 - Use `HasFactory` in the models to allow creating factories for testing and seeding the database.
