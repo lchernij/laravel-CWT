@@ -4,7 +4,7 @@
 
 This project is a study case about a website and API to track workers in work sites.
 
-## Tecnologies
+## Tecnologies and libraries used
 
 - Laravel 13
 - PHP 8.3
@@ -12,6 +12,8 @@ This project is a study case about a website and API to track workers in work si
 - PostGIS
 - TailwindCSS
 - Livewire
+- Pint
+- PhpStan
 
 ## Some considerations of personal development
 
@@ -20,6 +22,7 @@ This project is a study case about a website and API to track workers in work si
 - Use `HasFactory` in the models to allow creating factories for testing and seeding the database.
 - Use geopraphic coordinates in the working sites to allow tracking the workers in the site.
 - In CompanyWorkingSite table I use [GIST](https://www.postgresql.org/docs/current/gist.html#GIST-EXAMPLES) as the index type for the location field to allow spatial queries in the database.
+- In API routes I use [Route Model Binding](https://laravel.com/docs/13.x/routing#route-model-binding) to automatically inject the model instances into the controller methods.
 
 ## Documentation
 
