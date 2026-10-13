@@ -4,16 +4,18 @@
 
 This project is a study case about a website and API to track workers in work sites.
 
-## Tecnologies and libraries used
+## Tecnologies and libraries
 
-- Laravel 13
-- PHP 8.3
-- PostgreSQL
-- PostGIS
-- TailwindCSS
-- Livewire
-- Pint
-- PhpStan
+| Technology | Status |
+| --- | --- |
+| Laravel 13 | ✅ |
+| PHP 8.3 | ✅ |
+| PostgreSQL | ✅ |
+| PostGIS | ✅ |
+| TailwindCSS | ❌ |
+| Livewire | ❌ |
+| Pint | ✅ |
+| PhpStan | ✅ |
 
 ## Some considerations of personal development
 
@@ -51,24 +53,24 @@ A Working site belongs to a company and can have many workers.
 
 ### As Admin
 
-|Feature|Description|
-|-------|-----------|
-|List all users|Can list all users in the system|
-|List all companies|Can list all companies in the system|
-|List all working sites|Can list all working sites in the system|
+| Feature | Description | Status |
+| --- | --- | --- |
+| List all users | Can list all users in the system | ❌ |
+| List all companies | Can list all companies in the system | ❌ |
+| List all working sites | Can list all working sites in the system | ❌ |
 
 ### As Company
 
-|Feature|Description|
-|-------|-----------|
-|List all workers|Can list all workers in the company|
-|List all worker trakings|Can list all worker trackings in the company|
-|List all working sites|Can list all working sites in the company|
+| Feature | Description | Status |
+| --- | --- | --- |
+| List all workers | Can list all workers in the company | ❌ |
+| List all worker trakings | Can list all worker trackings in the company | ❌ |
+| List all working sites | Can list all working sites in the company | ❌ |
 
 ### As Worker
 
-|Feature|Description|
-|-------|-----------|
-|List all trakings|Can list all his own trackings|
-|List all working sites|Can list all his own working sites|
-|List all companies|Can list all his own companies|
+| Feature | Description | Status |
+| --- | --- | --- |
+| List all trakings | Can list all his own trackings | ❌ |
+| List all working sites | Can list all his own working sites | ✅ |
+| List all companies | Can list all his own companies | ✅ |
