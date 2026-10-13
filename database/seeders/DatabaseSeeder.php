@@ -61,18 +61,21 @@ class DatabaseSeeder extends Seeder
             'type' => UserType::COMPANY,
         ]);
 
+        // User id 6 to 1005
         $start = microtime(true);
         User::factory(1000)->create([
             'type' => UserType::ADMIN,
         ]);
         echo 'Bulk admin users created in: '.(microtime(true) - $start)." seconds\n";
 
+        // User id 1006 to 2005
         $start = microtime(true);
         User::factory(1000)->create([
             'type' => UserType::WORKER,
         ]);
         echo 'Bulk worker users created in: '.(microtime(true) - $start)." seconds\n";
 
+        // User id 2006 to 3005
         $start = microtime(true);
         User::factory(1000)->create([
             'type' => UserType::COMPANY,
@@ -82,6 +85,19 @@ class DatabaseSeeder extends Seeder
         $start = microtime(true);
         Company::factory(100)->create();
         echo 'Bulk companies created in: '.(microtime(true) - $start)." seconds\n";
+
+        $start = microtime(true);
+        foreach (Company::all() as $company) {
+            CompanyWorker::factory()->create([
+                'user_id' => 2,
+                'company_id' => $company->id,
+            ]);
+            CompanyWorker::factory()->create([
+                'user_id' => 3,
+                'company_id' => $company->id,
+            ]);
+        }
+        echo 'Set worker 1 and 2 to all companies in: '.(microtime(true) - $start)." seconds\n";
 
         $start = microtime(true);
         CompanyWorker::factory(1000)->create();
